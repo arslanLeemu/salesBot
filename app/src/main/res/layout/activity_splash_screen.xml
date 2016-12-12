@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.leemutech.org.salesbot.SplashScreen">
+    <ImageView
+        android:id="@+id/imageviewOne"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_background"
+        android:scaleType="centerCrop"/>
+    <TextView
+        android:id="@+id/myImageViewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageviewOne"
+        android:layout_alignTop="@+id/imageviewOne"
+        android:layout_alignRight="@+id/imageviewOne"
+        android:layout_alignBottom="@+id/imageviewOne"
+        android:layout_margin="1dp"
+        android:gravity="center"
+        android:textSize="35sp"
+        android:textStyle="italic"
+        android:text="@string/app_name"
+        android:textColor="@color/colorAccent" />
+
+
+
+    <ImageView
+        android:id="@+id/imageViewtwo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/splash_background"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+
+</RelativeLayout>
