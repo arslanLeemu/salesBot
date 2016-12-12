@@ -1,7 +1,10 @@
 package com.leemutech.org.salesbot;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -25,6 +28,8 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
         button_f2.setOnClickListener(this);
         button_f3.setOnClickListener(this);
         button_f4.setOnClickListener(this);
+        //////////display home button///////
+       getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
@@ -43,5 +48,25 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener 
                 Toast.makeText(this,"Button 4 pressed",Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
+    }
+    public void onBackPressed() {
+        //   super.onBackPressed();
+        Intent intent = new Intent(MainMenu.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_NO_HISTORY);
+        startActivity(intent);
+        finish();
     }
 }
